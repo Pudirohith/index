@@ -10,7 +10,9 @@ pipeline {
       }
      stage ('aws-s3') {
          steps {
+		 withAWS(credentials:'945639342668') {
            sh 'aws s3 cp index.html s3://my-datastorage'
+	 }
          }
 	}
    }

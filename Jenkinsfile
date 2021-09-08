@@ -10,9 +10,7 @@ pipeline {
       }
      stage ('aws-s3') {
          steps {
-          withAWS(region:'us-east-1',credentials:'945639342668') {
            sh 'aws s3 cp index.html s3://my-datastorage'
-	 }
          }
 	}
    }
